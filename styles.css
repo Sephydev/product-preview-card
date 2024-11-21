@@ -6,15 +6,37 @@
 
 :root {
     --cream: hsl(30, 38%, 92%);
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --dark-cyan: hsl(158, 36%, 37%);
+    --very-dark-cyan: hsl(158, 36%, 20%);
+    --white: hsl(0, 0%, 100%);
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("./assets/fonts/Montserrat-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: Fraunces;
+    src: url("./assets/fonts/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf");
 }
 
 body {
-    padding: 1rem;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
     background-color: var(--cream);
+    font-family: Montserrat, sans-serif;
 }
 
 .card {
+    margin: 1rem;
     border-radius: 1rem;
+    background-color: var(--white);
+    max-width: 21rem;
 }
 
 .mobile-img {
@@ -26,12 +48,130 @@ body {
     display: none;
 }
 
+main {
+    padding: 1rem 1.5rem;
+}
+
+.tag {
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    font-size: .6rem;
+    color: var(--dark-grayish-blue);
+    font-family: Montserrat;
+}
+
+h1 {
+    color: var(--very-dark-blue);
+    text-transform: capitalize;
+    font-family: Fraunces, sans-serif;
+    font-size: 1.75rem;
+    margin: .5rem 0 .75rem;
+    line-height: 1.75rem;
+}
+
+.description {
+    color: var(--dark-grayish-blue);
+    font-size: .7rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    max-width: 14.5rem;
+}
+
+.chanel {
+    text-transform: uppercase;
+}
+
+.price {
+    display: flex;
+    margin-top: 1rem;
+    align-items: center;
+    gap: 1rem;
+}
+
+.new-price {
+    font-family: Fraunces, sans-serif;
+    font-weight: 700;
+    color: var(--dark-cyan);
+    font-size: 1.75rem;
+}
+
+.old-price {
+    font-size: .7rem;
+    text-decoration: line-through;
+    color: var(--dark-grayish-blue);
+    font-weight: 500;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    border: none;
+    background-color: var(--dark-cyan);
+    width: 100%;
+    color: var(--white);
+    border-radius: .5rem;
+    padding: .75rem;
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    margin: 1rem 0 .75rem;
+    font-size: .75rem;
+}
+
+button img {
+    width: .75rem;
+}
+
+button:hover {
+    background-color: var(--very-dark-cyan);
+    cursor: pointer;
+}
+
 @media screen and (min-width: 1080px) {
+    .card {
+        display: flex;
+        max-width: 31rem;
+        border-radius: .5rem;
+    }
+
     .mobile-img {
         display: none;
     }
 
     .desktop-img {
         display: block;
+        max-width: 100%;
+        border-radius: .5rem 0 0 .5rem;
+    }
+
+    header {
+        max-width: 50%;
+    }
+
+    main {
+        padding: 1rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+    }
+
+    h1 {
+        width: 10rem;
+        margin: .75rem 0;
+        font-size: 1.5rem;
+    }
+
+    .description {
+        max-width: 11rem;
+    }
+
+    .price {
+        margin: 1.5rem 0 .5rem;
+    }
+
+    .new-price {
+        font-size: 1.5rem;
     }
 }
